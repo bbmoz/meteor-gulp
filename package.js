@@ -14,6 +14,4 @@ Npm.depends({
 Package.onUse(function (api) {
   api.versionsFrom('1.0.5');
   api.addFiles('gulp.js', 'server');
-  api.addFiles('./scaffold/gulpfile.js', 'server');
-  api.addFiles('./scaffold/package.json', 'server');
 });
