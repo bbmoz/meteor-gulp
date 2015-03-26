@@ -4,8 +4,8 @@
     var fs = Npm.require('fs.extra'),
         async = Npm.require('async'),
         spawn = Npm.require('child_process').spawn,
-        newGulpDir = process.env.PWD + '/../../.gulp/',
-        oldGulpDir = process.env.PWD + '/';
+        newGulpDir = process.env.PWD + '/.gulp/',
+        oldGulpDir = process.cwd() + '/';
 
     async.series({
         makeGulpDir: function (cb) {
