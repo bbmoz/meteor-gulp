@@ -1,4 +1,4 @@
-![CodeShip Status](https://codeship.com/projects/4c106dc0-b304-0132-b46b-6a71bba51758/status?branch=master)
+![CodeShip Status](https://codeship.com/projects/215bc240-b61d-0132-ac42-4286e2c721fd/status?branch=master)
 <h1><b>Gulp package for Meteor</b></h1>
 <i>Scaffolding and setup for gulp integration</li>
 
