@@ -5,8 +5,7 @@
         async = Npm.require('async'),
         spawn = Npm.require('child_process').spawn,
         newGulpDir = process.env.PWD + '/../../.gulp/',
-        oldGulpDir = process.env.PWD + '/',
-        npmInstall;
+        oldGulpDir = process.env.PWD + '/';
 
     async.series({
         makeGulpDir: function (cb) {
@@ -27,24 +26,8 @@
             });
         },
 
-        /*
-         installGulpGlobally: function (cb) {
-         console.log('gulp global');
-         var npmInstall = spawn('npm', ['install', '-g', 'gulp'], {
-         stdio: 'inherit'
-         });
-         npmInstall.on('exit', function (code) {
-         if (code === 0) {
-         cb(null, 'SUCCESS: npm install -g gulp')
-         } else {
-         cb('FAIL: npm install -g gulp')
-         }
-         });
-         },
-         */
-
         installGulpPlugins: function (cb) {
-            npmInstall = spawn('npm', ['install'], {
+            var npmInstall = spawn('npm', ['install'], {
                 cwd: newGulpDir,
                 stdio: 'inherit'
             });
@@ -62,6 +45,5 @@
         } else {
             console.log(msg);
         }
-        console.log('--DONE WITH GULP SETUP--');
     });
 }());

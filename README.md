@@ -1,6 +1,5 @@
 ![CodeShip Status](https://codeship.com/projects/215bc240-b61d-0132-ac42-4286e2c721fd/status?branch=master)
 <h1><b>Easy gulp scaffolding for Meteor</b></h1>
-<i>Scaffolding for easy gulp integration</li>
 
 <h3>Installation</h3>
 ```bash
