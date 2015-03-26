@@ -3,44 +3,66 @@
 
     var fs = Npm.require('fs.extra'),
         async = Npm.require('async'),
-        exec = Npm.require('child_process').exec,
-        gulpDir = process.env.PWD + '/.gulp/';
+        spawn = Npm.require('child_process').spawn,
+        newGulpDir = process.env.PWD + '/../../.gulp/',
+        oldGulpDir = process.env.PWD + '/';
 
     async.series({
-        runMakefile: function (cb) {
-            exec('(cd ./../util/ && make setup)', function (err) {
-                if (err) {
-                    return cb(err);
-                }
-                cb('Make has run successfully for the setup task');
-            });
-        },
-
         makeGulpDir: function (cb) {
-            fs.mkdirp(gulpDir, function (err) {
-                if (err) {
-                    return cb(err);
-                }
-                cb('Gulp directory has been created as .gulp');
+            console.log('makedir');
+            fs.mkdirp(newGulpDir, function (err) {
+                cb(null, err);
             });
         },
 
-        moveGulpFile: function (cb) {
-            fs.move('scaffold/gulpfile.js', gulpDir + 'gulpfile.js', function (err) {
-                if (err) {
-                    return cb(err);
-                }
-                cb('gulpfile.js has been created in .gulp');
+        copyGulpFile: function (cb) {
+            console.log('makefile1');
+            fs.copy(oldGulpDir + 'scaffold/gulpfile.js', newGulpDir + 'gulpfile.js', function (err) {
+                cb(null, err);
             });
         },
 
-        movePackageFile: function (cb) {
-            fs.move('scaffold/package.json', gulpDir + 'package.json', function (err) {
-                if (err) {
-                    return cb(err);
-                }
-                cb('gulpfile.js has been created in .gulp');
+        copyPackageFile: function (cb) {
+            console.log('makefile2');
+            fs.copy(oldGulpDir + 'scaffold/package.json', newGulpDir + 'package.json', function (err) {
+                cb(null, err);
             });
+        },
+
+        installGulpGlobally: function (cb) {
+            console.log('gulp global');
+            var npmInstall = spawn('sudo npm', ['install', '-g', 'gulp'], {
+                cwd: process.cwd(),
+                stdio: 'inherit'
+            });
+            npmInstall.on('exit', function (code) {
+                if (code === 0) {
+                    cb(null, 'npm install -g gulp')
+                } else {
+                    cb('FAILED: npm install -g gulp')
+                }
+            });
+        },
+
+        installGulpPlugins: function (cb) {
+            console.log('gulp');
+            var npmInstall = spawn('sudo npm', ['install'], {
+                cwd: newGulpDir,
+                stdio: 'inherit'
+            });
+            npmInstall.on('exit', function (code) {
+                if (code === 0) {
+                    cb(null, 'npm install in .gulp/')
+                } else {
+                    cb('FAILED: npm install in .gulp/')
+                }
+            });
+        }
+    }, function (err, msg) {
+        if (err) {
+            return console.error(err);
+        } else {
+            console.log(msg);
         }
     });
 }());

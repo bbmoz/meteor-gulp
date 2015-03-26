@@ -1,6 +1,6 @@
 Package.describe({
   name: 'bbmoz:gulp',
-  version: '0.0.1',
+  version: '0.0.4',
   summary: 'Scaffolding for gulp in your Meteor application',
   git: 'https://github.com/bbmoz/meteor-gulp.git',
   documentation: 'README.md'
@@ -8,7 +8,7 @@ Package.describe({
 
 Npm.depends({
   "fs.extra": "1.3.2",
-  "async": "0.9.2"
+  "async": "0.9.0"
 });
 
 Package.onUse(function (api) {
