@@ -1,6 +1,6 @@
 Package.describe({
   name: 'bbmoz:gulp',
-  version: '0.0.12',
+  version: '0.0.13',
   summary: 'Easy scaffolding for gulp',
   git: 'https://github.com/bbmoz/meteor-gulp.git',
   documentation: 'README.md'
