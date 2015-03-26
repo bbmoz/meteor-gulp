@@ -2,13 +2,15 @@
 <h1><b>Gulp package for Meteor</b></h1>
 <i>Scaffolding and setup for gulp integration</li>
 
-<h3>Setup</h3>
+<h3>Installation</h3>
 ```bash
 >> meteor add bbmoz:gulp
+>> npm install -g gulp
+>> meteor
 ```
-When you run "meteor", the necessary gulp NPM packages will be installed. In addition, two scaffold files will be created for you in the .gulp/ directory. These are:
-- .gulp/gulpfile.js
-- .gulp/package.json
 
 <h3>Running gulp</h3>
-In your .gulp/ directory, simply run "gulp". Please refer to the official gulp page at https://github.com/gulpjs/gulp.
+After you run "meteor", there should be a new .gulp/ directory with the following two files:
+- .gulp/gulpfile.js
+- .gulp/package.json
+In your .gulp/ directory, simply run "gulp". By default, the jshint gulp plugin is installed and set up for you. Please refer to the official gulp page at https://github.com/gulpjs/gulp to create your own tasks.

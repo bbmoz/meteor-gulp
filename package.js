@@ -1,7 +1,7 @@
 Package.describe({
   name: 'bbmoz:gulp',
-  version: '0.0.4',
-  summary: 'Scaffolding for gulp in your Meteor application',
+  version: '0.0.5',
+  summary: 'Scaffolding for gulp',
   git: 'https://github.com/bbmoz/meteor-gulp.git',
   documentation: 'README.md'
 });
