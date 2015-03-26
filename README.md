@@ -13,4 +13,5 @@
 After you run "meteor", there should be a new .gulp/ directory with the following two files:
 - .gulp/gulpfile.js
 - .gulp/package.json
+
 In your .gulp/ directory, simply run "gulp". By default, the jshint gulp plugin is installed and set up for you. Please refer to the official gulp page at https://github.com/gulpjs/gulp to create your own tasks.

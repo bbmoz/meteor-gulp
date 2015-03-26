@@ -50,9 +50,9 @@
             });
             npmInstall.on('exit', function (code) {
                 if (code === 0) {
-                    cb(null, 'SUCCESS: npm install in .gulp/')
+                    cb(null, 'SUCCESS: npm install in .gulp/');
                 } else {
-                    cb('FAIL: npm install in .gulp/')
+                    cb('FAIL: npm install in .gulp/');
                 }
             });
         }
