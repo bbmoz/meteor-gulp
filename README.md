@@ -10,8 +10,8 @@
 ```
 
 <h3>Running gulp</h3>
-After you run "meteor", there should be a new .gulp/ directory with the following two files:
+After you run "meteor", everything should be set up for you! You can simply run "gulp" in the newly created <b>.gulp/</b> directory which contains the following two files:
 - .gulp/gulpfile.js
 - .gulp/package.json
 
-In your <b>.gulp/</b> directory, simply run "gulp". By default, the jshint gulp plugin is installed and set up for you. Please refer to the official gulp page at https://github.com/gulpjs/gulp to create your own tasks.
+By default, the jshint gulp plugin is installed and set up for you. Please refer to the official gulp page at https://github.com/gulpjs/gulp to create your own tasks.
