@@ -1,0 +1,10 @@
+{
+    "name": "task-runner",
+    "version": "0.0.1",
+    "description": "gulp plugins",
+    "main": "gulpfile.js",
+    "devDependencies": {
+        "gulp": "latest",
+        "jshint": "latest"
+    }
+}
