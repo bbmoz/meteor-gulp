@@ -105,7 +105,6 @@
         "Tinytest": false,
         "_": false,
         "$": false,
-        "Router": false,
-        "require": false
+        "Router": false
     }
 }
