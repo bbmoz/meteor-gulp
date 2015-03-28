@@ -4,59 +4,72 @@
     var fs = Npm.require('fs.extra'),
         async = Npm.require('async'),
         spawn = Npm.require('child_process').spawn,
-        newGulpDir = process.env.PWD + '/.gulp/';
-
+        newGulpDir = process.env.PWD + '/.gulp/',
+        oldGulpDir = process.cwd() + '/assets/packages/bbmoz_gulp/plugin/';
 
     async.series({
         makeGulpDir: function (cb) {
             fs.mkdirp(newGulpDir, function (err) {
-                cb(null, err);
+                if (!err) {
+                    cb(null, 'Completed');
+                } else {
+                    cb(err);
+                }
             });
         },
 
         copyFiles: function (cb) {
             async.parallel({
                 copyPackageFile: function (cbFile) {
-                    fs.copy('package.json', newGulpDir + 'package.json',
+                    fs.copy(oldGulpDir + 'package.json',
+                        newGulpDir + 'package.json',
                         function (err) {
-                            cbFile(null, err);
+                            cbFile(err);
                         }
                     );
                 },
 
                 copyGulpFile: function (cbFile) {
-                    fs.copy('gulpfile.js', newGulpDir + 'gulpfile.js',
+                    fs.copy(oldGulpDir + 'gulpfile.temp',
+                        newGulpDir + 'gulpfile.js',
                         function (err) {
-                            cbFile(null, err);
+                            cbFile(err);
                         }
                     );
                 },
 
                 copyJshintrcFile: function (cbFile) {
-                    fs.copy('.jshintrc', newGulpDir + '.jshintrc',
+                    fs.copy(oldGulpDir + '.jshintrc',
+                        newGulpDir + '.jshintrc',
                         function (err) {
-                            cbFile(null, err);
+                            cbFile(err);
                         }
                     );
                 },
 
                 copyJscsrcFile: function (cbFile) {
-                    fs.copy('.jscsrc', newGulpDir + '.jscsrc',
+                    fs.copy(oldGulpDir + '.jscsrc',
+                        newGulpDir + '.jscsrc',
                         function (err) {
-                            cbFile(null, err);
+                            cbFile(err);
                         }
                     );
                 },
 
                 copyGitignoreFile: function (cbFile) {
-                    fs.copy('.gitignore', newGulpDir + '.gitignore',
+                    fs.copy(oldGulpDir + '.gitignore',
+                        newGulpDir + '.gitignore',
                         function (err) {
-                            cbFile(null, err);
+                            cbFile(err);
                         }
                     );
                 }
             }, function (err) {
-                cb(null, err);
+                if (!err) {
+                    cb(null, 'Completed');
+                } else {
+                    cb(null, 'Completed: ' + err.message);
+                }
             });
         },
 
@@ -67,31 +80,17 @@
             });
             npmInstall.on('exit', function (code) {
                 if (code === 0) {
-                    cb(null, 'SUCCESS: npm install in .gulp/');
+                    cb(null, 'Completed');
                 } else {
-                    cb('FAIL: npm install in .gulp/');
-                }
-            });
-        },
-
-        installGulpGlobal: function (cb) {
-            var npmInstall = spawn('npm', ['install', '-g', 'gulp'], {
-                cwd: newGulpDir,
-                stdio: 'inherit'
-            });
-            npmInstall.on('exit', function (code) {
-                if (code === 0) {
-                    cb(null, 'SUCCESS: npm -g install gulp');
-                } else {
-                    cb('FAIL: npm -g install gulp');
+                    cb('Failed');
                 }
             });
         }
-    }, function (err, msg) {
+    }, function (err, results) {
         if (err) {
             console.error(err);
         } else {
-            console.log(msg);
+            console.log(results + '\n--------------------');
         }
     });
 }());

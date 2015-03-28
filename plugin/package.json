@@ -1,4 +1,7 @@
 {
+    "description": "Meteor gulp plugins",
+    "repository": "https://github.com/bbmoz/meteor-gulp",
+    "private": true,
     "devDependencies": {
         "gulp": "latest",
         "gulp-jshint": "latest",
