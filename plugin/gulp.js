@@ -90,7 +90,7 @@
         if (err) {
             console.error(err);
         } else {
-            console.log(results + '\n--------------------');
+            console.log(JSON.stringify(results) + '\n--------------------');
         }
     });
 }());
