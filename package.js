@@ -3,7 +3,7 @@ Package.describe({
     version: '0.1.2',
     summary: 'Easy scaffolding for gulp',
     git: 'https://github.com/bbmoz/meteor-gulp.git',
-    documentation: 'README.md'
+    documentation: 'pkg.md'
 });
 
 Npm.depends({
