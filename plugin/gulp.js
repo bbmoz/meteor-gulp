@@ -17,36 +17,46 @@
         copyFiles: function (cb) {
             async.parallel({
                 copyPackageFile: function (cbFile) {
-                    fs.copy('package.json', newGulpDir + 'package.json', function (err) {
-                        cbFile(null, err);
-                    });
+                    fs.copy('package.json', newGulpDir + 'package.json',
+                        function (err) {
+                            cbFile(null, err);
+                        }
+                    );
                 },
 
                 copyGulpFile: function (cbFile) {
-                    fs.copy('gulpfile.js', newGulpDir + 'gulpfile.js', function (err) {
-                        cbFile(null, err);
-                    });
+                    fs.copy('gulpfile.js', newGulpDir + 'gulpfile.js',
+                        function (err) {
+                            cbFile(null, err);
+                        }
+                    );
                 },
 
                 copyJshintrcFile: function (cbFile) {
-                    fs.copy('.jshintrc', newGulpDir + '.jshintrc', function (err) {
-                        cbFile(null, err);
-                    });
+                    fs.copy('.jshintrc', newGulpDir + '.jshintrc',
+                        function (err) {
+                            cbFile(null, err);
+                        }
+                    );
                 },
 
                 copyJscsrcFile: function (cbFile) {
-                    fs.copy('.jscsrc', newGulpDir + '.jscsrc', function (err) {
-                        cbFile(null, err);
-                    });
+                    fs.copy('.jscsrc', newGulpDir + '.jscsrc',
+                        function (err) {
+                            cbFile(null, err);
+                        }
+                    );
                 },
 
                 copyGitignoreFile: function (cbFile) {
-                    fs.copy('.gitignore', newGulpDir + '.gitignore', function (err) {
-                        cbFile(null, err);
-                    });
+                    fs.copy('.gitignore', newGulpDir + '.gitignore',
+                        function (err) {
+                            cbFile(null, err);
+                        }
+                    );
                 }
             }, function (err) {
-                cb(null, err)
+                cb(null, err);
             });
         },
 
