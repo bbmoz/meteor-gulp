@@ -1,17 +1,17 @@
 Package.describe({
-  name: 'bbmoz:gulp',
-  version: '0.0.13',
-  summary: 'Easy scaffolding for gulp',
-  git: 'https://github.com/bbmoz/meteor-gulp.git',
-  documentation: 'README.md'
+    name: 'bbmoz:gulp',
+    version: '0.1.0',
+    summary: 'Easy scaffolding for gulp',
+    git: 'https://github.com/bbmoz/meteor-gulp.git',
+    documentation: 'README.md'
 });
 
 Npm.depends({
-  "fs.extra": "1.3.2",
-  "async": "0.9.0"
+    "fs.extra": "1.3.2",
+    "async": "0.9.0"
 });
 
 Package.onUse(function (api) {
-  api.versionsFrom('1.0.5');
-  api.addFiles('gulp.js', 'server');
+    api.versionsFrom('1.0.5');
+    api.addFiles(['plugin/gulp.js', 'plugin/package.json', 'plugin/gulpfile.temp', 'plugin/.jshintrc', 'plugin/.jscsrc', 'plugin/.gitignore'], 'server');
 });
