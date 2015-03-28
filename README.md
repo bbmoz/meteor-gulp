@@ -9,19 +9,26 @@
 >> meteor
 ```
 
+<h3>Why Gulp for Meteor?</h3>
+Gulp allows for a separation of concerns between Meteor's internal build system and a more general purpose task runner that gulp provides. By allowing gulp to use packages like linting, you are able to re-use the exact same gulp files for any web application of any stack. Especially in times when there are many different technologies to choose from, it's beneficial to be able to re-use components from one project to another.
+
 <h3>Running Gulp</h3>
-After you run "meteor", gulp should be set up for you automatically in addition to code quality plugins (jshint and jscs) to work out-of-the-box with Meteor. You can simply open up a new terminal and run "gulp" in the newly created <b>.gulp/</b> directory which contains the following files:
+After you follow the installation instructions, gulp should be set up for you automatically in addition to useful code quality plugins (js and css linting) to work out-of-the-box with Meteor. You can simply open up a new terminal and run "gulp" in the newly created <b>.gulp/</b> directory which contains the following files:
 - gulpfile.js
 - package.json
 - .jshintrc
 - .jscsrc
+- .csslintrc
 
-The .jshintrc and .jscsrc files are modified versions of established style guides to work in tandem with each other for Meteor. Many of the rules have been inspired by Douglas Crockford.
+The .jshintrc, .jscsrc, and .csslintrc files are modified versions of established guides to work in tandem with each other for Meteor.
 
 Please refer to the official gulp page at https://github.com/gulpjs/gulp to create your own tasks.
 
-<h3>Output Messages</h3>
-As long as you see the word "Completed" for the 3 tasks "makeGulpDir", "copyFiles", and "installGulpPlugins" at the very bottom of the console when you run your Meteor application, this means the gulp scaffolding has been successful.
+<h3>Customization</h3>
+You are welcome to modify any of the linting .*rc config files that are pre-generated for you to fit your own coding and style standards.
+
+<h3>Output</h3>
+When you run "meteor", as long as you see the word "Completed" for the 3 tasks "makeGulpDir", "copyFiles", and "installGulpPlugins" at the very bottom of the console when you run your Meteor application, this means the gulp scaffolding has been successful.
 
 Below is an example of what this should look like when you first go through the installation.
 ```javascript

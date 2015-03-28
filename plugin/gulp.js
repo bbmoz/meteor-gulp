@@ -56,6 +56,15 @@
                     );
                 },
 
+                copyCsslintrcFile: function (cbFile) {
+                    fs.copy(oldGulpDir + '.csslintrc',
+                        newGulpDir + '.csslintrc',
+                        function (err) {
+                            cbFile(err);
+                        }
+                    );
+                },
+
                 copyGitignoreFile: function (cbFile) {
                     fs.copy(oldGulpDir + '.gitignore',
                         newGulpDir + '.gitignore',
@@ -90,7 +99,11 @@
         if (err) {
             console.error(err);
         } else {
-            console.log(JSON.stringify(results) + '\n--------------------');
+            console.log(
+                '--------------------\n' +
+                JSON.stringify(results) +
+                '\n--------------------'
+            );
         }
     });
 }());

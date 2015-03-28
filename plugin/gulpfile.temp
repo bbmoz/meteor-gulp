@@ -1,27 +1,41 @@
 var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
     jscs = require('gulp-jscs'),
-    stylish = require('gulp-jscs-stylish');
+    stylish = require('gulp-jscs-stylish'),
+    csslint = require('gulp-csslint');
 
 var srcs = {
-    lint: [
+    jslint: [
         '!./../.meteor/**/*.js',
         '!./../packages/**/*.js',
         '!./../**/node_modules',
+        './../*.js',
         './../**/*.js'
+    ],
+    csslint: [
+        '!./../packages/**/*.css',
+        './../*.css',
+        './../**/*.css'
     ]
 };
 
-gulp.task('lint', function () {
-    return gulp.src(srcs.lint)
+gulp.task('jslint', function () {
+    return gulp.src(srcs.jslint)
         .pipe(jshint('.jshintrc'))
         .pipe(jscs('.jscsrc'))
         .pipe(stylish.combineWithHintResults())
         .pipe(jshint.reporter('jshint-stylish'));
 });
 
-gulp.task('watch', function () {
-    gulp.watch(srcs.lint, ['lint']);
+gulp.task('csslint', function () {
+    return gulp.src(srcs.csslint)
+        .pipe(csslint('.csslintrc'))
+        .pipe(csslint.reporter('jshint-stylish'));
 });
 
-gulp.task('default', ['lint', 'watch']);
+gulp.task('watch', function () {
+    gulp.watch(srcs.jslint, ['jslint']);
+    gulp.watch(srcs.csslint, ['csslint']);
+});
+
+gulp.task('default', ['jslint', 'csslint', 'watch']);
