@@ -8,11 +8,11 @@
 >> npm install -g gulp
 >> meteor
 ```
-When you run "meteor", as long as you see the word "Completed" for the 3 tasks "makeGulpDir", "copyFiles", and "installGulpPlugins" at the very bottom of the console, the gulp scaffolding has been successful.
+When you run "meteor", you should see a bunch of packages being installed. If you see the starting and ending logs below, then the installation was successful. It should take a couple of seconds before you see the end log.
 
-Below is an example of what this should look like when you first go through the installation.
 ```javascript
-{"makeGulpDir":"Completed","copyFiles":"Completed","installGulpPlugins":"Completed"}
+<---- START gulp scaffold ---->
+<---- END gulp scaffold ---->
 ```
 
 ##Why Gulp for Meteor?
@@ -31,4 +31,4 @@ The .jshintrc, .jscsrc, and .csslintrc files are modified versions of establishe
 Please refer to the official gulp page at https://github.com/gulpjs/gulp to create your own tasks.
 
 ##Linting Customization
-You are welcome to modify any of the linting .*rc config files that are pre-generated for you to fit your own coding and style standards.
+You are welcome to modify any of the linting .*rc config files that are pre-generated for you to fit your own coding and style standards. You are also free to do whatever you want with the gulpfile.js.
