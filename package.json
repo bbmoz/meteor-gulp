@@ -1,0 +1,9 @@
+{
+    "devDependencies": {
+        "gulp": "latest",
+        "gulp-jshint": "latest",
+        "jshint-stylish": "latest",
+        "gulp-jscs": "latest",
+        "gulp-jscs-stylish": "latest"
+    }
+}

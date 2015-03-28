@@ -1,2 +1,5 @@
-/* Development Environment */
+/* Packages */
+node_modules
+
+/* Environment */
 .idea
