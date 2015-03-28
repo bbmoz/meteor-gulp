@@ -13,5 +13,5 @@ Npm.depends({
 
 Package.onUse(function (api) {
     api.versionsFrom('1.0.5');
-    api.addFiles(['gulp.js', 'package.json', 'gulpfile.js', '.jshintrc', 'jscsrc', '.gitignore'], 'server');
+    api.addFiles(['plugin/gulp.js', 'plugin/package.json', 'plugin/gulpfile.js', 'plugin/.jshintrc', 'plugin/.jscsrc', 'plugin/.gitignore'], 'server');
 });
