@@ -1,7 +1,5 @@
 var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
-    jscs = require('gulp-jscs'),
-    stylish = require('gulp-jscs-stylish'),
     csslint = require('gulp-csslint');
 
 var srcs = {
@@ -9,11 +7,17 @@ var srcs = {
         '!./../.meteor/**/*.js',
         '!./../packages/**/*.js',
         '!./../**/node_modules',
+        '!./../public/*.js',
+        '!./../public/**/*.js',
         './../*.js',
         './../**/*.js'
     ],
     csslint: [
+        '!./../.meteor/**/*.css',
         '!./../packages/**/*.css',
+        '!./../**/node_modules',
+        '!./../public/*.css',
+        '!./../public/**/*.css',
         './../*.css',
         './../**/*.css'
     ]
@@ -22,8 +26,6 @@ var srcs = {
 gulp.task('jslint', function () {
     return gulp.src(srcs.jslint)
         .pipe(jshint('.jshintrc'))
-        .pipe(jscs('.jscsrc'))
-        .pipe(stylish.combineWithHintResults())
         .pipe(jshint.reporter('jshint-stylish'));
 });
 
