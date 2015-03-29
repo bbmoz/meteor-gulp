@@ -47,15 +47,6 @@
                     );
                 },
 
-                copyJscsrcFile: function (cbFile) {
-                    fs.copy(oldGulpDir + '.jscsrc',
-                        newGulpDir + '.jscsrc',
-                        function (err) {
-                            cbFile(err);
-                        }
-                    );
-                },
-
                 copyCsslintrcFile: function (cbFile) {
                     fs.copy(oldGulpDir + '.csslintrc',
                         newGulpDir + '.csslintrc',
