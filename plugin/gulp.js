@@ -48,10 +48,10 @@
                 },
 
                 copyJscsrcFile: function (cbFile) {
-                    fs.copy('.jscsrc',
+                    fs.copy(oldGulpDir + '.jscsrc',
                         newGulpDir + '.jscsrc',
                         function (err) {
-                            cbFile(null, err);
+                            cbFile(err);
                         }
                     );
                 },
