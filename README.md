@@ -23,9 +23,10 @@ After you follow the installation instructions, gulp should be set up for you au
 - gulpfile.js
 - package.json
 - .jshintrc
+- .jscsrc
 - .csslintrc
 
-The .jshintrc and .csslintrc files are modified versions of established guides to work in tandem with each other for Meteor. While you are running gulp, anytime you modify a JavaScript or CSS file, the corresponding gulp task will run the linting check.
+The .jshintrc, .jscsrc, and .csslintrc files are modified versions of established guides to work in tandem with each other for Meteor. While you are running gulp, anytime you modify a JavaScript or CSS file, the corresponding gulp task will run the linting check.
 
 Please refer to the official gulp page at https://github.com/gulpjs/gulp to create your own tasks.
 

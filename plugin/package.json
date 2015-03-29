@@ -4,8 +4,12 @@
     "private": true,
     "devDependencies": {
         "gulp": "latest",
+        "gulp-plumber": "latest",
+        "gulp-watch": "latest",
         "gulp-jshint": "latest",
         "jshint-stylish": "latest",
+        "gulp-jscs": "latest",
+        "gulp-jscs-stylish": "latest",
         "gulp-csslint": "latest"
     }
 }
