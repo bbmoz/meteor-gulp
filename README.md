@@ -15,6 +15,8 @@ When you run "meteor", you should see a bunch of packages being installed. If yo
 <---- END gulp scaffold ---->
 ```
 
+At the moment, this package serves as a one-time install and should probably be removed afterwards via a "meteor remove". More features are being planned that will make this package more useful.
+
 ##Why Gulp for Meteor?
 Gulp allows for a separation of concerns between Meteor's internal build system and a more general purpose task runner that gulp provides. By allowing gulp to use packages like linting, you are able to re-use the exact same gulp files from one project to another.
 
